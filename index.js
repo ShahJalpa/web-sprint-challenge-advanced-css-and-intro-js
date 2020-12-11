@@ -217,7 +217,8 @@ console.log(artists[2].bio);
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
+const regStr= /Gogh/gi;
+console.log(artists[8].bio.replace(regStr,'Dough'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
@@ -248,7 +249,7 @@ function get20s(array/*Your Code Here*/){
   /*Your Code Here*/
   const new20artist=[];
   for(let i=0; i<array.length; i++){
-    if(array[i].years==="1900 - 2000"){
+    if(array[i].years>=1900 && array[i].years<=2000){
       return new20artist[array.name];
     }
   }
@@ -266,7 +267,7 @@ console.log(get20s(artists));
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
+function removeArtist(array, index/*Your Code Here*/){
    /*Your Code Here*/
 }
    
