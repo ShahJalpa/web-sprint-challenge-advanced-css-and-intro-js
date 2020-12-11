@@ -249,10 +249,11 @@ function get20s(array/*Your Code Here*/){
   /*Your Code Here*/
   const new20artist=[];
   for(let i=0; i<array.length; i++){
-    if(array[i].years>=1900 && array[i].years<=2000){
-      return new20artist[array.name];
+    if(array[i].includes("1900 - 1999")){
+       new20artist.push(array[i].name);
     }
   }
+  return new20artist;
 }
 console.log(get20s(artists));
 
@@ -269,13 +270,12 @@ console.log(get20s(artists));
 
 function removeArtist(array, index/*Your Code Here*/){
    /*Your Code Here*/
-   array.splice(array[index],1);
+   array.splice(index,1);
+   //return array.length;
    return array.length;
 }
-console.log(removeArtist(artists[0],1));
-
-
-   
+console.log(artists.length);
+removeArtist(artists,0);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -293,10 +293,12 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
+function addArtist(array, name, years, genre, nationality, bio/*Your Code Here*/){
     /*Your Code Here*/
+    array.push(name, years, genre, nationality, bio);
+    return array;
   }
-
+  console.log(addArtist(artists, 'Jalpa Shah', '1982 - present', 'Web Design', 'Indian', 'getting ready for her future'));
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -306,10 +308,18 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
+function lotsOfArt(array/*Your Code Here*/){
   /*Your Code Here*/
+  const newLotArtists=[];
+  for (let i=0; i<array.length; i++)
+  {
+    if(array[i].paintings>100){
+        newLotArtists.push(array[i].name);
+    }
+  }
+  return newLotArtists;
 }
-
+console.log(lotsOfArt(artists));
 
 
 
