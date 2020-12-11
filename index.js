@@ -269,7 +269,12 @@ console.log(get20s(artists));
 
 function removeArtist(array, index/*Your Code Here*/){
    /*Your Code Here*/
+   array.splice(array[index],1);
+   return array.length;
 }
+console.log(removeArtist(artists[0],1));
+
+
    
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
