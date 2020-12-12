@@ -249,8 +249,8 @@ function get20s(array/*Your Code Here*/){
   /*Your Code Here*/
   const new20artist=[];
   for(let i=0; i<array.length; i++){
-    if(array[i].includes("1900 - 1999")){
-       new20artist.push(array[i].name);
+    if (array[i]>=1900 && array[i]<=2000){
+      new20artist.push(array[i].name);
     }
   }
   return new20artist;
